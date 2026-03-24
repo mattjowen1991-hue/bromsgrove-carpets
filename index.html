@@ -3,642 +3,922 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bromsgrove Carpets & Flooring Co – Family run business with over 25 years of experience. Supply, fit, free quotation & mobile showroom in Bromsgrove.">
-<meta name="keywords" content="carpets Bromsgrove, flooring Bromsgrove, carpet fitting Bromsgrove, flooring company Bromsgrove, carpet supply fit Bromsgrove">
-<title>Bromsgrove Carpets & Flooring Co</title>
+<meta name="description" content="Bromsgrove Carpets & Flooring Co – Family run business with over 25 years of experience supplying and fitting carpets and flooring in Bromsgrove. Free quotation & mobile showroom.">
+<meta name="keywords" content="carpets Bromsgrove, flooring Bromsgrove, carpet fitting Bromsgrove, flooring company Bromsgrove, carpet fitter Bromsgrove, free quotation flooring Bromsgrove">
+<title>Bromsgrove Carpets & Flooring Co | Carpet & Flooring Fitters Bromsgrove</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --yellow: #F5C518;
-    --yellow-light: #FDE97A;
-    --yellow-dark: #D4A800;
-    --brown: #3E2A1A;
-    --brown-mid: #6B3F1F;
-    --brown-light: #A0673A;
-    --cream: #FDF6E3;
-    --white: #FFFFFF;
-    --text-dark: #1A0F00;
-    --text-mid: #4A2F0F;
-  }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-  html { scroll-behavior: smooth; }
+:root {
+  --yellow: #F5C518;
+  --yellow-dark: #C9A200;
+  --yellow-pale: #FDF3C0;
+  --brown: #3E2A1A;
+  --brown-mid: #5C3317;
+  --brown-light: #8B5A2B;
+  --cream: #FAF6EE;
+  --white: #FFFFFF;
+  --text: #2a1a08;
+  --text-mid: #5a3a1a;
+  --text-light: #8a6a4a;
+  --border: #e0d0b0;
+}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--text-dark);
-    overflow-x: hidden;
-  }
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  font-size: 15px;
+  line-height: 1.6;
+}
 
-  /* ── HEADER / NAV ── */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    background: var(--brown);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
-  }
+a { color: var(--brown-mid); text-decoration: none; }
+a:hover { color: var(--yellow-dark); }
 
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
+/* ─── TOP BAR ─── */
+.topbar {
+  background: var(--brown);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 7px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.topbar a { color: var(--yellow); }
+.topbar a:hover { color: var(--yellow-dark); }
+.topbar-right { display: flex; gap: 18px; align-items: center; }
+
+/* ─── HEADER ─── */
+header {
+  background: var(--cream);
+  border-bottom: 3px solid var(--yellow);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo-block h1 {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(1.1rem, 3.5vw, 1.55rem);
+  color: var(--brown);
+  line-height: 1.2;
+}
+
+.logo-block h1 span { color: var(--yellow-dark); }
+
+.logo-block p {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 3px;
+}
+
+.header-cta {
+  background: var(--yellow);
+  color: var(--brown);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 12px 20px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  border: 2px solid var(--yellow-dark);
+  transition: background 0.2s;
+}
+.header-cta:hover { background: var(--yellow-dark); color: var(--white); }
+
+/* ─── NAV ─── */
+nav {
+  background: var(--brown);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  display: block;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 14px 14px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background: var(--yellow);
+  color: var(--brown);
+}
+
+.nav-mobile-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--yellow);
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+/* ─── HERO SLIDER ─── */
+.hero {
+  position: relative;
+  background: var(--brown);
+  overflow: hidden;
+  height: 420px;
+}
+
+@media (min-width: 768px) { .hero { height: 500px; } }
+@media (min-width: 1100px) { .hero { height: 560px; } }
+
+.slide {
+  position: absolute; inset: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.slide.active { opacity: 1; pointer-events: all; }
+
+.slide-bg {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  transition: transform 6s ease;
+}
+
+.slide.active .slide-bg { transform: scale(1); }
+
+.slide-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(30,15,5,0.82) 0%, rgba(30,15,5,0.5) 55%, rgba(30,15,5,0.1) 100%);
+}
+
+.slide-content {
+  position: relative; z-index: 2;
+  padding: 30px 28px;
+  max-width: 580px;
+}
+
+@media (min-width: 768px) { .slide-content { padding: 40px 60px; } }
+
+.slide-tag {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--brown);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.slide-content h2 {
+  font-family: 'Merriweather', serif;
+  color: var(--white);
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.slide-content h2 em {
+  color: var(--yellow);
+  font-style: normal;
+}
+
+.slide-content p {
+  color: rgba(255,255,255,0.82);
+  font-size: 0.93rem;
+  margin-bottom: 22px;
+  max-width: 420px;
+}
+
+.btn-yellow {
+  background: var(--yellow);
+  color: var(--brown);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 13px 24px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 2px solid var(--yellow-dark);
+  transition: background 0.2s;
+}
+.btn-yellow:hover { background: var(--yellow-dark); color: var(--white); }
+
+.slide-dots {
+  position: absolute; bottom: 18px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 8px; z-index: 5;
+}
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+}
+.dot.active { background: var(--yellow); }
+
+.slide-1 .slide-bg {
+  background: linear-gradient(135deg, #5C3317 0%, #3E2A1A 100%);
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23F5C518' fill-opacity='0.04'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0L80 12v2L54 40h-2zm4 0L80 16v2L58 40h-2zm4 0L80 20v2L62 40h-2zm4 0L80 24v2L66 40h-2zm4 0L80 28v2L70 40h-2zm4 0L80 32v2L74 40h-2zm4 0L80 36v2L78 40h-2zm4 0L80 40h-2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(135deg, #5C3317 0%, #3E2A1A 100%);
+}
+.slide-2 .slide-bg { background: linear-gradient(160deg, #3E2A1A 0%, #6B3F1F 100%); }
+.slide-3 .slide-bg { background: linear-gradient(135deg, #6B3F1F 0%, #3E2A1A 100%); }
+
+/* ─── YELLOW BANNER ─── */
+.banner {
+  background: var(--yellow);
+  padding: 16px 20px;
+  border-bottom: 3px solid var(--yellow-dark);
+}
+
+.banner-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--brown);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.banner-item .icon { font-size: 1.1rem; }
+
+/* ─── INTRO SECTION ─── */
+.intro {
+  background: var(--cream);
+  padding: 50px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.intro-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+@media (min-width: 768px) {
+  .intro-inner { grid-template-columns: 1.6fr 1fr; gap: 50px; align-items: start; }
+}
+
+.intro h2 {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  color: var(--brown);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.intro h2 span { color: var(--yellow-dark); }
+
+.intro p { color: var(--text-mid); margin-bottom: 14px; font-size: 0.95rem; }
+
+.intro ul {
+  list-style: none;
+  margin: 18px 0 24px;
+}
+
+.intro ul li {
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-mid);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.intro ul li::before {
+  content: '✓';
+  color: var(--yellow-dark);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.intro-aside {
+  background: var(--brown);
+  border-radius: 6px;
+  padding: 28px 24px;
+  color: white;
+}
+
+.intro-aside h3 {
+  font-family: 'Merriweather', serif;
+  color: var(--yellow);
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+.intro-aside p { color: rgba(255,255,255,0.8); font-size: 0.88rem; margin-bottom: 18px; }
+
+.btn-whatsapp {
+  background: #25D366;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 14px 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background 0.2s;
+  text-align: center;
+}
+.btn-whatsapp:hover { background: #1da855; color: white; }
+
+.intro-aside .stat-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.stat { text-align: center; flex: 1; }
+.stat strong {
+  display: block;
+  font-family: 'Merriweather', serif;
+  font-size: 1.7rem;
+  color: var(--yellow);
+  line-height: 1;
+}
+.stat span { font-size: 0.72rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ─── PRODUCT PANELS ─── */
+.panels {
+  padding: 50px 20px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading h2 {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+  color: var(--brown);
+  margin-bottom: 6px;
+}
+
+.section-heading p { color: var(--text-light); font-size: 0.9rem; }
+
+.panel-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) { .panel-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .panel-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.panel {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  background: var(--cream);
+  cursor: pointer;
+}
+
+.panel:hover {
+  border-color: var(--yellow);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(62,42,26,0.13);
+}
+
+.panel-img {
+  aspect-ratio: 4/3;
+  background: var(--brown-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+}
+
+.panel-label {
+  background: var(--brown);
+  color: var(--white);
+  text-align: center;
+  padding: 10px 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: background 0.2s;
+}
+
+.panel:hover .panel-label { background: var(--yellow-dark); }
+
+/* ─── GALLERY ─── */
+.gallery-section {
+  padding: 50px 20px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+
+.gallery-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 640px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.gallery-item {
+  aspect-ratio: 1;
+  border-radius: 5px;
+  background: var(--brown-mid);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 2rem;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.gallery-item:hover { border-color: var(--yellow); transform: scale(1.02); }
+
+.gallery-item span.lbl {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.gallery-add {
+  grid-column: 1 / -1;
+  background: white;
+  border: 2px dashed var(--yellow-dark);
+  border-radius: 5px;
+  padding: 18px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ─── WHY US ─── */
+.why-us {
+  padding: 50px 20px;
+  background: var(--brown);
+}
+
+.why-us .section-heading h2 { color: var(--yellow); }
+.why-us .section-heading p { color: rgba(255,255,255,0.6); }
+
+.why-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) { .why-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.why-item {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(245,197,24,0.2);
+  border-radius: 6px;
+  padding: 22px 18px;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.why-item:hover { background: rgba(255,255,255,0.1); border-color: var(--yellow); }
+
+.why-item .icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+.why-item h3 { font-size: 0.88rem; font-weight: 700; color: var(--yellow); margin-bottom: 6px; }
+.why-item p { font-size: 0.8rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+/* ─── CTA STRIP ─── */
+.cta-strip {
+  background: var(--yellow);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 3px solid var(--yellow-dark);
+}
+
+.cta-strip h2 {
+  font-family: 'Merriweather', serif;
+  color: var(--brown);
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  margin-bottom: 8px;
+}
+
+.cta-strip p {
+  color: var(--brown-mid);
+  font-size: 0.92rem;
+  margin-bottom: 22px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-strip .btn-whatsapp {
+  display: inline-flex;
+  padding: 15px 28px;
+  font-size: 1rem;
+  border-radius: 5px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--text);
+  color: rgba(255,255,255,0.6);
+  padding: 36px 20px 20px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (min-width: 640px) { .footer-inner { grid-template-columns: 1.5fr 1fr 1fr; } }
+
+.footer-brand h3 {
+  font-family: 'Merriweather', serif;
+  color: var(--yellow);
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.footer-brand p { font-size: 0.82rem; line-height: 1.7; }
+
+.footer-col h4 {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { font-size: 0.82rem; padding: 4px 0; }
+.footer-col ul li a { color: rgba(255,255,255,0.55); }
+.footer-col ul li a:hover { color: var(--yellow); }
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 16px auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+
+/* ─── MOBILE NAV ─── */
+@media (max-width: 700px) {
+  .topbar-right { display: none; }
+  .nav-links { display: none; flex-direction: column; width: 100%; }
+  .nav-links.open { display: flex; }
+  .nav-links li a { padding: 13px 20px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav-mobile-btn { display: block; }
+  .nav-logo-small {
     color: var(--yellow);
-    font-size: 1.05rem;
-    line-height: 1.2;
-    max-width: 220px;
-  }
-
-  .nav-logo span {
-    display: block;
-    color: var(--cream);
-    font-size: 0.65rem;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-top: 2px;
-  }
-
-  .nav-cta {
-    background: var(--yellow);
-    color: var(--brown);
-    font-weight: 700;
-    font-size: 0.75rem;
-    padding: 10px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    white-space: nowrap;
-    letter-spacing: 0.02em;
-    transition: background 0.2s, transform 0.15s;
-  }
-
-  .nav-cta:hover { background: var(--yellow-dark); transform: scale(1.03); }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(160deg, var(--brown) 0%, var(--brown-mid) 55%, #7a4a28 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 110px 24px 60px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-inner {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 40px;
-  }
-
-  .hero-left { flex: 1; }
-
-  .hero-right {
-    display: none;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F5C518' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-  }
-
-  .hero-tag {
-    background: var(--yellow);
-    color: var(--brown);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    display: inline-block;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    color: var(--white);
-    font-size: clamp(2.4rem, 9vw, 4rem);
-    line-height: 1.1;
-    margin-bottom: 12px;
-    animation: fadeUp 0.6s 0.1s ease both;
-  }
-
-  .hero h1 em {
-    color: var(--yellow);
-    font-style: normal;
-  }
-
-  .hero-sub {
-    color: rgba(255,255,255,0.8);
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.6;
-    max-width: 380px;
-    margin-bottom: 32px;
-    animation: fadeUp 0.6s 0.2s ease both;
-  }
-
-  .hero-buttons {
-    display: flex; flex-direction: column; gap: 12px; width: 100%;
-    animation: fadeUp 0.6s 0.3s ease both;
-  }
-
-  .btn-primary {
-    background: var(--yellow);
-    color: var(--brown);
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 16px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 4px 16px rgba(245,197,24,0.35);
-  }
-
-  .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,24,0.45); }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--yellow);
-    font-weight: 500;
-    font-size: 0.95rem;
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    border: 2px solid var(--yellow);
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .btn-secondary:hover { background: rgba(245,197,24,0.12); }
-
-  .hero-badges {
-    display: flex; gap: 20px; margin-top: 36px;
-    animation: fadeUp 0.6s 0.4s ease both;
-  }
-
-  .badge {
-    text-align: center;
-    color: rgba(255,255,255,0.75);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  .badge strong {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: var(--yellow);
-    line-height: 1;
-    margin-bottom: 3px;
-  }
-
-  /* ── SECTIONS ── */
-  section { padding: 60px 24px; }
-
-  .section-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--yellow-dark);
-    margin-bottom: 8px;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.7rem, 6vw, 2.4rem);
-    color: var(--brown);
-    line-height: 1.2;
-    margin-bottom: 18px;
-  }
-
-  .section-body {
-    color: var(--text-mid);
-    font-size: 0.98rem;
-    line-height: 1.75;
-    max-width: 540px;
-  }
-
-  /* ── ABOUT ── */
-  .about { background: var(--cream); }
-
-  .about-card {
-    background: var(--brown);
-    border-radius: 16px;
-    padding: 28px 24px;
-    margin-top: 28px;
-  }
-
-  .about-card p {
-    color: rgba(255,255,255,0.85);
-    font-size: 0.95rem;
-    line-height: 1.75;
-  }
-
-  .about-card p strong { color: var(--yellow); font-weight: 600; }
-
-  /* ── SERVICES ── */
-  .services { background: var(--white); }
-
-  .service-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 28px;
-  }
-
-  .service-item {
-    background: var(--cream);
-    border-radius: 12px;
-    padding: 20px 16px;
-    border-left: 4px solid var(--yellow);
-  }
-
-  .service-item .icon { font-size: 1.8rem; margin-bottom: 8px; }
-
-  .service-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.95rem;
-    color: var(--brown);
-    margin-bottom: 4px;
-  }
-
-  .service-item p {
-    font-size: 0.8rem;
-    color: var(--text-mid);
-    line-height: 1.5;
-  }
-
-  .service-highlight {
-    grid-column: 1 / -1;
-    background: var(--yellow);
-    border-left: none;
-    border-radius: 12px;
-    padding: 22px 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .service-highlight .icon { font-size: 2.2rem; flex-shrink: 0; }
-
-  .service-highlight h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
-    color: var(--brown);
-    margin-bottom: 4px;
-  }
-
-  .service-highlight p { font-size: 0.83rem; color: var(--brown-mid); line-height: 1.5; }
-
-  /* ── GALLERY ── */
-  .gallery { background: var(--brown); }
-
-  .gallery .section-title { color: var(--yellow); }
-  .gallery .section-label { color: rgba(245,197,24,0.6); }
-  .gallery .section-body { color: rgba(255,255,255,0.7); }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 28px;
-  }
-
-  .gallery-item {
-    aspect-ratio: 1;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    background: var(--brown-mid);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-  }
-
-  .gallery-item.wide { grid-column: 1 / -1; aspect-ratio: 2/1; }
-
-  .gallery-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .gallery-placeholder span {
-    font-size: 0.7rem;
-    color: rgba(255,255,255,0.4);
-    font-family: 'DM Sans', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .gallery-add-note {
-    margin-top: 18px;
-    padding: 14px 18px;
-    background: rgba(245,197,24,0.12);
-    border-radius: 10px;
-    border: 1px dashed rgba(245,197,24,0.3);
-    color: rgba(255,255,255,0.55);
     font-size: 0.82rem;
-    text-align: center;
-    line-height: 1.6;
-  }
-
-  /* ── QUOTE CTA ── */
-  .quote-cta {
-    background: linear-gradient(135deg, var(--yellow) 0%, #E8B800 100%);
-    text-align: center;
-    padding: 60px 24px;
-  }
-
-  .quote-cta .section-title { color: var(--brown); margin-bottom: 10px; }
-
-  .quote-cta p {
-    color: var(--brown-mid);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 32px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .btn-whatsapp {
-    background: #25D366;
-    color: white;
     font-weight: 700;
-    font-size: 1.05rem;
-    padding: 18px 32px;
-    border-radius: 10px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    transition: transform 0.15s, box-shadow 0.2s;
+    font-family: 'Merriweather', serif;
   }
+}
 
-  .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+@media (min-width: 701px) {
+  .nav-logo-small { display: none; }
+}
 
-  .whatsapp-icon { font-size: 1.3rem; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--text-dark);
-    color: rgba(255,255,255,0.55);
-    text-align: center;
-    padding: 30px 24px;
-    font-size: 0.8rem;
-    line-height: 1.8;
-  }
-
-  footer strong { color: var(--yellow); font-weight: 600; }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(22px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── DESKTOP ── */
-  @media (min-width: 640px) {
-    .hero { padding: 120px 48px 80px; }
-    .hero-buttons { flex-direction: row; width: auto; }
-    .btn-primary, .btn-secondary { display: inline-block; }
-    section { padding: 80px 48px; }
-    .service-grid { grid-template-columns: 1fr 1fr 1fr; }
-    .service-highlight { grid-column: auto; }
-    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-    .gallery-item.wide { grid-column: auto; aspect-ratio: 1; }
-  }
-
-  @media (min-width: 900px) {
-    nav { padding: 16px 60px; }
-    .nav-logo { font-size: 1.2rem; }
-    section { padding: 100px 80px; }
-    .hero { padding: 140px 80px 100px; align-items: center; }
-    .hero-inner { flex-direction: row; align-items: center; }
-    .hero-right {
-      display: flex;
-      flex: 0 0 42%;
-      flex-direction: column;
-      gap: 14px;
-      animation: fadeUp 0.6s 0.35s ease both;
-    }
-    .hero-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(245,197,24,0.2);
-      border-radius: 14px;
-      padding: 22px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      backdrop-filter: blur(4px);
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .hero-card:hover {
-      background: rgba(255,255,255,0.11);
-      border-color: rgba(245,197,24,0.45);
-    }
-    .hero-card-icon {
-      font-size: 2rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .hero-card h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--yellow);
-      font-size: 1rem;
-      margin-bottom: 4px;
-    }
-    .hero-card p {
-      color: rgba(255,255,255,0.72);
-      font-size: 0.83rem;
-      line-height: 1.55;
-    }
-    .hero-card-divider {
-      height: 1px;
-      background: linear-gradient(to right, rgba(245,197,24,0.4), transparent);
-      margin: 2px 0;
-    }
-  }
 </style>
 </head>
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>🏠 Bromsgrove Carpets &amp; Flooring Co — Serving Bromsgrove &amp; surrounding areas</span>
+  <div class="topbar-right">
+    <span>📞 <a href="https://wa.me/447700000000">WhatsApp Us</a></span>
+    <span>Family Run · 25+ Years Experience</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-block">
+    <h1>Bromsgrove <span>Carpets &amp; Flooring Co</span></h1>
+    <p>Family Run Business · Est. 25+ Years · Supply &amp; Fit</p>
+  </div>
+  <a href="https://wa.me/447700000000?text=Hi!%20I%27d%20like%20to%20book%20a%20free%20quotation." class="header-cta" target="_blank">
+    💬 Book Free Quotation
+  </a>
+</header>
+
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    Bromsgrove Carpets &amp; Flooring Co
-    <span>Est. 25+ Years Experience</span>
+  <div class="nav-inner">
+    <span class="nav-logo-small">BCF Co</span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Carpets</a></li>
+      <li><a href="#services">Laminate</a></li>
+      <li><a href="#services">Vinyl</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu">☰</button>
   </div>
-  <a href="https://wa.me/447700000000?text=Hi!%20I%27d%20like%20to%20book%20a%20free%20quotation." class="nav-cta" target="_blank">📞 Book Now</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-tag">Bromsgrove's Trusted Flooring Experts</div>
-      <h1>Your Floors.<br><em>Our Passion.</em></h1>
-      <p class="hero-sub">Family run, locally trusted, and fitted to perfection. From luxurious carpets to contemporary hard flooring — we bring the showroom to you.</p>
-
-      <div class="hero-buttons">
-        <a href="https://wa.me/447700000000?text=Hi!%20I%27d%20like%20to%20book%20a%20free%20quotation." class="btn-primary" target="_blank">📋 Book Free Quotation</a>
-        <a href="#gallery" class="btn-secondary">View Our Work</a>
-      </div>
-
-      <div class="hero-badges">
-        <div class="badge"><strong>25+</strong>Years Experience</div>
-        <div class="badge"><strong>100%</strong>Free Quote</div>
-        <div class="badge"><strong>Local</strong>Bromsgrove</div>
-      </div>
+<!-- HERO SLIDER -->
+<div class="hero">
+  <div class="slide slide-1 active">
+    <div class="slide-bg"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-tag">Family Run · Bromsgrove</div>
+      <h2>Quality Carpets &amp;<br><em>Flooring Solutions</em></h2>
+      <p>Over 25 years of expert supply and fitting across Bromsgrove and surrounding areas. Your perfect floor starts here.</p>
+      <a href="https://wa.me/447700000000?text=Hi!%20I%27d%20like%20to%20book%20a%20free%20quotation." class="btn-yellow" target="_blank">📋 Book Free Quotation</a>
     </div>
+  </div>
+  <div class="slide slide-2">
+    <div class="slide-bg"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-tag">Mobile Showroom</div>
+      <h2>We Bring the<br><em>Showroom to You</em></h2>
+      <p>Can't come to us? No problem — we bring a full range of samples directly to your home, at a time that suits you.</p>
+      <a href="https://wa.me/447700000000?text=Hi!%20I%27d%20like%20to%20arrange%20a%20mobile%20showroom%20visit." class="btn-yellow" target="_blank">📱 Arrange a Visit</a>
+    </div>
+  </div>
+  <div class="slide slide-3">
+    <div class="slide-bg"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-tag">100% Free</div>
+      <h2>Free Quotation<br><em>No Obligation</em></h2>
+      <p>Get a clear, honest price with no hidden fees. We measure up, advise, and quote — completely free of charge.</p>
+      <a href="https://wa.me/447700000000?text=Hi!%20I%27d%20like%20a%20free%20flooring%20quotation." class="btn-yellow" target="_blank">💬 Get Your Free Quote</a>
+    </div>
+  </div>
+  <div class="slide-dots">
+    <button class="dot active" data-slide="0"></button>
+    <button class="dot" data-slide="1"></button>
+    <button class="dot" data-slide="2"></button>
+  </div>
+</div>
 
-    <div class="hero-right">
-      <div class="hero-card">
-        <div class="hero-card-icon">🚐</div>
-        <div>
-          <h3>Mobile Showroom</h3>
-          <p>We bring samples to your door so you can choose in your own home, in your own light.</p>
-        </div>
-      </div>
-      <div class="hero-card-divider"></div>
-      <div class="hero-card">
-        <div class="hero-card-icon">📋</div>
-        <div>
-          <h3>Free Quotation</h3>
-          <p>No obligation, no pressure. Get an honest price from a family business that cares.</p>
-        </div>
-      </div>
-      <div class="hero-card-divider"></div>
-      <div class="hero-card">
-        <div class="hero-card-icon">🏆</div>
-        <div>
-          <h3>25+ Years Experience</h3>
-          <p>Trusted by hundreds of homes and businesses across Bromsgrove and the surrounding area.</p>
-        </div>
-      </div>
-      <div class="hero-card-divider"></div>
-      <div class="hero-card">
-        <div class="hero-card-icon">🪵</div>
-        <div>
-          <h3>Carpets &amp; Hard Flooring</h3>
-          <p>A wide range of styles and budgets — all professionally supplied and fitted.</p>
-        </div>
+<!-- YELLOW BANNER -->
+<div class="banner">
+  <div class="banner-inner">
+    <div class="banner-item"><span class="icon">✅</span> Free Home Quotation</div>
+    <div class="banner-item"><span class="icon">🚐</span> Mobile Showroom Service</div>
+    <div class="banner-item"><span class="icon">🏠</span> Supply &amp; Fit</div>
+    <div class="banner-item"><span class="icon">📍</span> Bromsgrove Based</div>
+    <div class="banner-item"><span class="icon">⭐</span> 25+ Years Experience</div>
+  </div>
+</div>
+
+<!-- INTRO / ABOUT -->
+<section class="intro" id="about">
+  <div class="intro-inner">
+    <div>
+      <h2>Bromsgrove's Trusted <span>Carpet &amp; Flooring</span> Specialists</h2>
+      <p>We are a family run business with over 25 years of experience in carpets and flooring, proudly serving Bromsgrove and the surrounding areas. We take genuine pride in the quality of every installation we carry out — from a single room to a full house.</p>
+      <p>Whether you're looking for a warm, cosy carpet or stylish hard flooring, we offer expert advice and a truly personal service you won't find on the high street.</p>
+      <ul>
+        <li>Carpet supply &amp; fitting — full range of styles and budgets</li>
+        <li>Laminate, vinyl &amp; LVT hard flooring</li>
+        <li>Free home measuring &amp; quotation service</li>
+        <li>Mobile showroom — samples brought to your door</li>
+        <li>Professional fitting by our experienced team</li>
+        <li>Honest pricing with no hidden costs</li>
+      </ul>
+      <a href="#gallery" class="btn-yellow">View Our Work →</a>
+    </div>
+    <div class="intro-aside" id="contact">
+      <h3>📋 Book a Free Quotation</h3>
+      <p>Contact us today on WhatsApp to arrange your free, no-obligation home visit. We'll bring samples, measure up, and give you a clear, honest price.</p>
+      <a href="https://wa.me/447700000000?text=Hi!%20I%27d%20like%20to%20book%20a%20free%20quotation%20for%20carpets%20or%20flooring." class="btn-whatsapp" target="_blank">
+        💬 Message Us on WhatsApp
+      </a>
+      <div class="stat-row">
+        <div class="stat"><strong>25+</strong><span>Years Exp.</span></div>
+        <div class="stat"><strong>100%</strong><span>Free Quote</span></div>
+        <div class="stat"><strong>Local</strong><span>Bromsgrove</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="section-label">Who We Are</div>
-  <h2 class="section-title">A Family Business<br>Built on Quality</h2>
-  <p class="section-body">With over 25 years of expertise in carpets and flooring, we've helped hundreds of families and businesses across Bromsgrove transform their spaces.</p>
-  <div class="about-card">
-    <p>We're not a faceless chain — we're <strong>your neighbours</strong>. As a family run business, we take genuine pride in every job we complete. We <strong>supply and fit</strong> a wide range of carpets and flooring solutions, and we stand by the quality of every installation we carry out.<br><br>Our promise is simple: <strong>expert advice, honest pricing, and flawless fitting.</strong></p>
+<!-- PRODUCT PANELS -->
+<section class="panels" id="services">
+  <div class="section-heading">
+    <h2>Our Flooring Range</h2>
+    <p>From luxury carpets to contemporary hard flooring — we've got it all</p>
   </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="section-label">What We Offer</div>
-  <h2 class="section-title">Everything You Need,<br>Under One Roof</h2>
-
-  <div class="service-grid">
-    <div class="service-item">
-      <div class="icon">🏠</div>
-      <h3>Carpet Supply &amp; Fit</h3>
-      <p>Extensive range of styles, textures and budgets — sourced and fitted to a high standard.</p>
-    </div>
-    <div class="service-item">
-      <div class="icon">🪵</div>
-      <h3>Hard Flooring</h3>
-      <p>Laminate, vinyl, LVT &amp; more. Durable, stylish, and professionally installed.</p>
-    </div>
-    <div class="service-item">
-      <div class="icon">📏</div>
-      <h3>Free Measuring</h3>
-      <p>Accurate measurements taken by our experienced team — no guesswork, no surprises.</p>
-    </div>
-    <div class="service-item">
-      <div class="icon">⭐</div>
-      <h3>Expert Advice</h3>
-      <p>25+ years of knowledge at your disposal — we'll help you choose the perfect flooring.</p>
-    </div>
-    <div class="service-highlight">
-      <div class="icon">🚐</div>
-      <div>
-        <h3>Mobile Showroom — We Come to You!</h3>
-        <p>Can't visit us? No problem. We bring samples directly to your home so you can see exactly how they look in your own space and lighting before committing.</p>
-      </div>
-    </div>
+  <div class="panel-grid">
+    <div class="panel"><div class="panel-img">🏠</div><div class="panel-label">Carpets</div></div>
+    <div class="panel"><div class="panel-img">🪵</div><div class="panel-label">Laminate Flooring</div></div>
+    <div class="panel"><div class="panel-img">✨</div><div class="panel-label">Vinyl Flooring</div></div>
+    <div class="panel"><div class="panel-img">🏡</div><div class="panel-label">LVT / Designer</div></div>
+    <div class="panel"><div class="panel-img">📏</div><div class="panel-label">Free Measuring</div></div>
+    <div class="panel"><div class="panel-img">🔧</div><div class="panel-label">Fitting Service</div></div>
+    <div class="panel"><div class="panel-img">🚐</div><div class="panel-label">Mobile Showroom</div></div>
+    <div class="panel"><div class="panel-img">💬</div><div class="panel-label">Free Quotation</div></div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section class="gallery" id="gallery">
-  <div class="section-label">Our Work</div>
-  <h2 class="section-title">See the Difference<br>Quality Makes</h2>
-  <p class="section-body">Every floor we fit is a reflection of our craftsmanship. Take a look at some of our recent installations across Bromsgrove.</p>
-
-  <div class="gallery-grid">
-    <div class="gallery-item wide">
-      <div class="gallery-placeholder">🖼️<span>Photo coming soon</span></div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">🪵<span>Laminate</span></div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">🏠<span>Carpet</span></div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">✨<span>Vinyl</span></div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder">🛋️<span>Lounge</span></div>
-    </div>
+<section class="gallery-section" id="gallery">
+  <div class="section-heading">
+    <h2>Our Recent Work</h2>
+    <p>Every floor we fit is a reflection of our craftsmanship and attention to detail</p>
   </div>
-
-  <div class="gallery-add-note">📸 Got photos of your completed installation? Send them to us on WhatsApp and we'll add them here!</div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><span>🪵</span><span class="lbl">Laminate</span></div>
+    <div class="gallery-item"><span>🏠</span><span class="lbl">Carpet</span></div>
+    <div class="gallery-item"><span>✨</span><span class="lbl">Vinyl</span></div>
+    <div class="gallery-item"><span>🛋️</span><span class="lbl">Lounge</span></div>
+    <div class="gallery-item"><span>🏡</span><span class="lbl">Hallway</span></div>
+    <div class="gallery-item"><span>🪟</span><span class="lbl">Bedroom</span></div>
+    <div class="gallery-item"><span>🍳</span><span class="lbl">Kitchen</span></div>
+    <div class="gallery-item"><span>⭐</span><span class="lbl">Staircase</span></div>
+    <div class="gallery-add">📸 <strong>Photos coming soon!</strong><br>Send us your completed installation photos on WhatsApp and we'll feature them here.</div>
+  </div>
 </section>
 
-<!-- QUOTE CTA -->
-<section class="quote-cta" id="contact">
-  <div class="section-label">Get Started Today</div>
-  <h2 class="section-title">Book Your Free<br>Quotation Now</h2>
-  <p>Get in touch today for a no-obligation quote. We'll visit your home at a time that suits you, bring samples, measure up, and give you a clear, honest price — completely free of charge.</p>
+<!-- WHY US -->
+<section class="why-us">
+  <div class="section-heading">
+    <h2>Why Choose Us?</h2>
+    <p>A family business built on quality, trust, and local knowledge</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <span class="icon">🏆</span>
+      <h3>25+ Years Experience</h3>
+      <p>Trusted by hundreds of homes and businesses across Bromsgrove since our very first installation.</p>
+    </div>
+    <div class="why-item">
+      <span class="icon">👨‍👩‍👧</span>
+      <h3>Family Run</h3>
+      <p>Personal, attentive service from a business that genuinely cares about the quality of your result.</p>
+    </div>
+    <div class="why-item">
+      <span class="icon">🚐</span>
+      <h3>Mobile Showroom</h3>
+      <p>We bring samples to your home so you can see exactly how they look in your own light and space.</p>
+    </div>
+    <div class="why-item">
+      <span class="icon">💰</span>
+      <h3>Free Quotation</h3>
+      <p>Honest, transparent pricing. No hidden costs. We measure, advise, and quote — all at no charge.</p>
+    </div>
+  </div>
+</section>
 
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <h2>Ready for Your Perfect Floor?</h2>
+  <p>Book your free, no-obligation home quotation today. We'll visit at a time that suits you, bring our full range of samples, and give you a clear and honest price.</p>
   <a href="https://wa.me/447700000000?text=Hi!%20I%27d%20like%20to%20book%20a%20free%20flooring%20quotation%20please." class="btn-whatsapp" target="_blank">
-    <span class="whatsapp-icon">💬</span>
-    Book Free Quotation on WhatsApp
+    💬 Book Free Quotation Now on WhatsApp
   </a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <strong>Bromsgrove Carpets &amp; Flooring Co</strong><br>
-  Serving Bromsgrove &amp; surrounding areas<br>
-  Family run · 25+ years experience · Supply &amp; Fit · Free Quotations<br><br>
-  © 2025 Bromsgrove Carpets &amp; Flooring Co. All rights reserved.
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Bromsgrove Carpets &amp; Flooring Co</h3>
+      <p>Family run business supplying and fitting quality carpets and flooring across Bromsgrove and the surrounding areas for over 25 years. Free quotations and mobile showroom available.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Flooring</h4>
+      <ul>
+        <li><a href="#services">Carpets</a></li>
+        <li><a href="#services">Laminate Flooring</a></li>
+        <li><a href="#services">Vinyl Flooring</a></li>
+        <li><a href="#services">LVT / Designer Flooring</a></li>
+        <li><a href="#services">Fitting Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Free Quotation</a></li>
+        <li><a href="#gallery">Our Work</a></li>
+        <li><a href="https://wa.me/447700000000" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Bromsgrove Carpets &amp; Flooring Co. All rights reserved.</span>
+    <span>Serving Bromsgrove, Redditch, Droitwich &amp; surrounding areas</span>
+  </div>
 </footer>
+
+<script>
+  // Mobile nav toggle
+  document.getElementById('mobileBtn').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  // Slider
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+
+  function goToSlide(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = n;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', function() {
+      goToSlide(parseInt(this.dataset.slide));
+    });
+  });
+
+  setInterval(() => goToSlide((current + 1) % slides.length), 5000);
+</script>
 
 </body>
 </html>
