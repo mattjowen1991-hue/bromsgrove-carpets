@@ -20,13 +20,13 @@ async function loadAllPartials() {
     loadPartial('partial-banner',  'banner.html'),
     loadPartial('partial-intro',   'intro.html'),
     loadPartial('partial-panels',  'panels.html'),
-    loadPartial('partial-gallery', 'gallery.html'),
     loadPartial('partial-why',     'why-us.html'),
     loadPartial('partial-cta',     'cta.html'),
     loadPartial('partial-footer',  'footer.html'),
   ]);
   initNav();
   initSlider();
+  initAccordion();
 }
 
 // ─── Mobile nav toggle ──────────────────────────────────────────
@@ -58,6 +58,28 @@ function initSlider() {
   });
 
   setInterval(() => goToSlide((current + 1) % slides.length), 5000);
+}
+
+// ─── Flooring panel accordion ───────────────────────────────────
+function initAccordion() {
+  document.querySelectorAll('.panel').forEach(panel => {
+    panel.addEventListener('click', () => {
+      const drawer = panel.nextElementSibling;
+      const isOpen = panel.classList.contains('open');
+
+      // Close all open panels first
+      document.querySelectorAll('.panel.open').forEach(p => {
+        p.classList.remove('open');
+        p.nextElementSibling.style.maxHeight = null;
+      });
+
+      // Open clicked panel if it wasn't already open
+      if (!isOpen) {
+        panel.classList.add('open');
+        drawer.style.maxHeight = drawer.scrollHeight + 'px';
+      }
+    });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', loadAllPartials);
