@@ -87,10 +87,16 @@ header {
 /* ─── NAV ─── */
 nav {
   background: var(--brown);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 500;
 }
+
+/* Push page content down so it doesn't hide under the fixed nav */
+body { padding-top: 48px; }
+@media (min-width: 701px) { body { padding-top: 50px; } }
 .nav-inner {
   display: flex;
   align-items: center;
@@ -681,7 +687,7 @@ footer {
   .topbar { display: none; }
   header { display: none; }
 
-  nav { position: sticky; top: 0; z-index: 500; }
+  nav { z-index: 500; }
 
   .nav-inner {
     display: flex;
