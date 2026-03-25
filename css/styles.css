@@ -89,7 +89,7 @@ nav {
   background: var(--brown);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 500;
 }
 .nav-inner {
   display: flex;
@@ -681,7 +681,7 @@ footer {
   .topbar { display: none; }
   header { display: none; }
 
-  nav { position: sticky; top: 0; z-index: 100; }
+  nav { position: sticky; top: 0; z-index: 500; }
 
   .nav-inner {
     display: flex;
