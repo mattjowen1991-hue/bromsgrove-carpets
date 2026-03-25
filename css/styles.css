@@ -684,9 +684,13 @@ footer {
   nav { position: sticky; top: 0; z-index: 100; }
 
   .nav-inner {
-    flex-wrap: wrap;
-    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    position: relative;
   }
 
   .nav-logo-small {
@@ -701,6 +705,7 @@ footer {
   .nav-mobile-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 14px 0;
     flex-shrink: 0;
   }
@@ -708,10 +713,14 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 100%;
-    flex-basis: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     background: var(--brown);
     border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 99;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
 
   .nav-links.open { display: flex; }
