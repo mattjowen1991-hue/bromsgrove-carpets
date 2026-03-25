@@ -27,6 +27,7 @@ async function loadAllPartials() {
   initNav();
   initSlider();
   initAccordion();
+  initLightbox();
 }
 
 // ─── Mobile nav toggle ──────────────────────────────────────────
@@ -92,6 +93,70 @@ function initAccordion() {
         drawer.style.maxHeight = drawer.scrollHeight + 'px';
       }
     });
+  });
+}
+
+// ─── Lightbox ────────────────────────────────────────────────────
+function initLightbox() {
+  // Build lightbox DOM
+  const lb = document.createElement('div');
+  lb.id = 'lightbox';
+  lb.innerHTML = `
+    <div id="lb-overlay"></div>
+    <button id="lb-close">✕</button>
+    <button id="lb-prev">&#8249;</button>
+    <button id="lb-next">&#8250;</button>
+    <div id="lb-img-wrap"><img id="lb-img" src="" alt=""></div>
+    <div id="lb-counter"></div>
+  `;
+  document.body.appendChild(lb);
+
+  let images = [];
+  let current = 0;
+
+  function show(idx) {
+    current = (idx + images.length) % images.length;
+    document.getElementById('lb-img').src = images[current].src;
+    document.getElementById('lb-img').alt = images[current].alt;
+    document.getElementById('lb-counter').textContent = (current + 1) + ' / ' + images.length;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Open on photo click — use event delegation so it works after accordion opens
+  document.addEventListener('click', e => {
+    const photo = e.target.closest('.drawer-photo:not(.placeholder) img');
+    if (!photo) return;
+    // Gather all real photos from the same drawer
+    const drawer = photo.closest('.panel-drawer');
+    images = Array.from(drawer.querySelectorAll('.drawer-photo:not(.placeholder) img'));
+    show(images.indexOf(photo));
+  });
+
+  document.getElementById('lb-prev').addEventListener('click', () => show(current - 1));
+  document.getElementById('lb-next').addEventListener('click', () => show(current + 1));
+  document.getElementById('lb-close').addEventListener('click', close);
+  document.getElementById('lb-overlay').addEventListener('click', close);
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'ArrowLeft')  show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+    if (e.key === 'Escape')     close();
+  });
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  lb.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) show(diff > 0 ? current + 1 : current - 1);
   });
 }
 
