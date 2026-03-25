@@ -72,26 +72,16 @@ function initSlider() {
   setInterval(() => goToSlide((current + 1) % slides.length), 5000);
 }
 
-// ─── Flooring panel accordion ───────────────────────────────────
+// ─── Flooring panel → direct lightbox ───────────────────────────
 function initAccordion() {
   document.querySelectorAll('.panel').forEach(panel => {
     panel.addEventListener('click', () => {
       const type = panel.dataset.type;
       const drawer = document.getElementById('drawer-' + type);
-      const isOpen = panel.classList.contains('open');
-
-      // Close all
-      document.querySelectorAll('.panel.open').forEach(p => {
-        p.classList.remove('open');
-        const d = document.getElementById('drawer-' + p.dataset.type);
-        if (d) d.style.maxHeight = null;
-      });
-
-      // Open this one if it wasn't already open
-      if (!isOpen && drawer) {
-        panel.classList.add('open');
-        drawer.style.maxHeight = drawer.scrollHeight + 'px';
-      }
+      if (!drawer) return;
+      const imgs = Array.from(drawer.querySelectorAll('.drawer-photo:not(.placeholder) img'));
+      if (!imgs.length) return;
+      openLightbox(imgs, 0);
     });
   });
 }
@@ -114,6 +104,11 @@ function initLightbox() {
   let images = [];
   let current = 0;
 
+  window.openLightbox = function(imgs, startIndex) {
+    images = imgs;
+    show(startIndex || 0);
+  };
+
   function show(idx) {
     current = (idx + images.length) % images.length;
     document.getElementById('lb-img').src = images[current].src;
@@ -127,16 +122,6 @@ function initLightbox() {
     lb.classList.remove('active');
     document.body.style.overflow = '';
   }
-
-  // Open on photo click — use event delegation so it works after accordion opens
-  document.addEventListener('click', e => {
-    const photo = e.target.closest('.drawer-photo:not(.placeholder) img');
-    if (!photo) return;
-    // Gather all real photos from the same drawer
-    const drawer = photo.closest('.panel-drawer');
-    images = Array.from(drawer.querySelectorAll('.drawer-photo:not(.placeholder) img'));
-    show(images.indexOf(photo));
-  });
 
   document.getElementById('lb-prev').addEventListener('click', () => show(current - 1));
   document.getElementById('lb-next').addEventListener('click', () => show(current + 1));
