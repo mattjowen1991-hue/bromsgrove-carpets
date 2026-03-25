@@ -3,85 +3,71 @@
     <h2>Our Flooring Range</h2>
     <p>Click any flooring type to see examples of our work</p>
   </div>
+
   <div class="panel-grid">
-
-    <!-- ── CARPETS ── -->
-    <div class="panel">
+    <div class="panel" data-type="carpets">
       <div class="panel-img">🏠</div>
-      <div class="panel-label">
-        Carpets
-        <span class="panel-arrow">▼</span>
-      </div>
+      <div class="panel-label">Carpets <span class="panel-arrow">▼</span></div>
     </div>
-    <div class="panel-drawer">
-      <div class="drawer-inner">
-        <div class="drawer-grid">
-          <!-- To add a photo: replace the placeholder div with:
-               <div class="drawer-photo"><img src="images/your-photo.jpg" alt="Description"></div> -->
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-        </div>
-        <p class="drawer-desc">A wide range of carpet styles to suit every room and budget — from plush pile to practical twist. We supply and fit all major brands.</p>
-      </div>
-    </div>
-
-    <!-- ── LAMINATE ── -->
-    <div class="panel">
+    <div class="panel" data-type="laminate">
       <div class="panel-img">🪵</div>
-      <div class="panel-label">
-        Laminate Flooring
-        <span class="panel-arrow">▼</span>
-      </div>
+      <div class="panel-label">Laminate Flooring <span class="panel-arrow">▼</span></div>
     </div>
-    <div class="panel-drawer">
-      <div class="drawer-inner">
-        <div class="drawer-grid">
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-        </div>
-        <p class="drawer-desc">Durable, stylish and easy to maintain. Our laminate range includes a variety of wood and stone effects to complement any home.</p>
-      </div>
-    </div>
-
-    <!-- ── VINYL ── -->
-    <div class="panel">
+    <div class="panel" data-type="vinyl">
       <div class="panel-img">✨</div>
-      <div class="panel-label">
-        Vinyl Flooring
-        <span class="panel-arrow">▼</span>
-      </div>
+      <div class="panel-label">Vinyl Flooring <span class="panel-arrow">▼</span></div>
     </div>
-    <div class="panel-drawer">
-      <div class="drawer-inner">
-        <div class="drawer-grid">
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-        </div>
-        <p class="drawer-desc">Waterproof and practical — ideal for kitchens, bathrooms and hallways. Available in a huge range of designs including realistic wood and tile effects.</p>
-      </div>
-    </div>
-
-    <!-- ── LVT / DESIGNER ── -->
-    <div class="panel">
+    <div class="panel" data-type="lvt">
       <div class="panel-img">🏡</div>
-      <div class="panel-label">
-        LVT / Designer
-        <span class="panel-arrow">▼</span>
-      </div>
+      <div class="panel-label">LVT / Designer <span class="panel-arrow">▼</span></div>
     </div>
-    <div class="panel-drawer">
-      <div class="drawer-inner">
-        <div class="drawer-grid">
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-          <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
-        </div>
-        <p class="drawer-desc">Luxury vinyl tiles offer the look of real wood or stone with outstanding durability. A premium choice for any room in the home.</p>
-      </div>
-    </div>
-
   </div>
+
+  <!-- Drawers sit OUTSIDE the grid so they span full width -->
+  <div class="panel-drawer" id="drawer-carpets">
+    <div class="drawer-inner">
+      <div class="drawer-grid">
+        <!-- To add a photo: replace placeholder div with:
+             <div class="drawer-photo"><img src="images/your-photo.jpg" alt="Description"></div> -->
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+      </div>
+      <p class="drawer-desc">A wide range of carpet styles to suit every room and budget — from plush pile to practical twist. We supply and fit all major brands.</p>
+    </div>
+  </div>
+
+  <div class="panel-drawer" id="drawer-laminate">
+    <div class="drawer-inner">
+      <div class="drawer-grid">
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+      </div>
+      <p class="drawer-desc">Durable, stylish and easy to maintain. Our laminate range includes a variety of wood and stone effects to complement any home.</p>
+    </div>
+  </div>
+
+  <div class="panel-drawer" id="drawer-vinyl">
+    <div class="drawer-inner">
+      <div class="drawer-grid">
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+      </div>
+      <p class="drawer-desc">Waterproof and practical — ideal for kitchens, bathrooms and hallways. Available in a huge range of designs including realistic wood and tile effects.</p>
+    </div>
+  </div>
+
+  <div class="panel-drawer" id="drawer-lvt">
+    <div class="drawer-inner">
+      <div class="drawer-grid">
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+        <div class="drawer-photo placeholder"><span>📷</span><span class="ph-label">Photo coming soon</span></div>
+      </div>
+      <p class="drawer-desc">Luxury vinyl tiles offer the look of real wood or stone with outstanding durability. A premium choice for any room in the home.</p>
+    </div>
+  </div>
+
 </section>

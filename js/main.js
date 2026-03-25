@@ -64,17 +64,19 @@ function initSlider() {
 function initAccordion() {
   document.querySelectorAll('.panel').forEach(panel => {
     panel.addEventListener('click', () => {
-      const drawer = panel.nextElementSibling;
+      const type = panel.dataset.type;
+      const drawer = document.getElementById('drawer-' + type);
       const isOpen = panel.classList.contains('open');
 
-      // Close all open panels first
+      // Close all
       document.querySelectorAll('.panel.open').forEach(p => {
         p.classList.remove('open');
-        p.nextElementSibling.style.maxHeight = null;
+        const d = document.getElementById('drawer-' + p.dataset.type);
+        if (d) d.style.maxHeight = null;
       });
 
-      // Open clicked panel if it wasn't already open
-      if (!isOpen) {
+      // Open this one if it wasn't already open
+      if (!isOpen && drawer) {
         panel.classList.add('open');
         drawer.style.maxHeight = drawer.scrollHeight + 'px';
       }
