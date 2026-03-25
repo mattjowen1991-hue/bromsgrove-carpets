@@ -382,10 +382,19 @@ nav {
 .panel-img {
   aspect-ratio: 4/3;
   background: var(--brown-mid);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.4rem;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+.panel-img img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 .panel-label {
   background: var(--brown);
