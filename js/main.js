@@ -36,6 +36,17 @@ function initNav() {
   if (btn && links) {
     btn.addEventListener('click', () => links.classList.toggle('open'));
   }
+
+  // Active link highlighting
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+      document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+      // Close menu on mobile after clicking
+      const navLinks = document.getElementById('navLinks');
+      if (navLinks) navLinks.classList.remove('open');
+    });
+  });
 }
 
 // ─── Hero slider ────────────────────────────────────────────────
