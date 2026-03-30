@@ -677,10 +677,35 @@ footer {
   margin: 16px auto 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   gap: 6px;
   font-size: 0.75rem;
 }
+
+/* ─── FACEBOOK BUTTON ─── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-fb {
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.nav-fb:hover { color: #1877F2; }
+
+.footer-fb {
+  color: rgba(255,255,255,0.55);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  transition: color 0.2s;
+}
+.footer-fb:hover { color: #1877F2; }
 
 /* ─── MOBILE NAV ─── */
 @media (max-width: 700px) {
